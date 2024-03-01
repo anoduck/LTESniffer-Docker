@@ -1,0 +1,6 @@
+[submodule "uhd"]
+	path = uhd
+	url = https://github.com/EttusResearch/uhd.git
+[submodule "LTESniffer"]
+	path = LTESniffer
+	url = https://github.com/SysSec-KAIST/LTESniffer
