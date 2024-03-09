@@ -18,7 +18,7 @@ RUN cmake ../ && make -j$(nproc) && make install && ldconfig
 RUN uhd_images_downloader
 
 RUN apt-get install build-essential git cmake libfftw3-dev libmbedtls-dev libboost-program-options-dev \
-libconfig++-dev libsctp-dev -y
+libconfig++-dev libsctp-dev hackrf libhackrf-dev soapysdr-module-hackrf -y
 
 RUN apt-get install libglib2.0-dev libudev-dev libcurl4-gnutls-dev libboost-all-dev qtdeclarative5-dev \
 libqt5charts5-dev -y

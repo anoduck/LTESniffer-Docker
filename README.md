@@ -20,19 +20,29 @@ collecting, and 3) Capability profiling.
 Please refer to the original authors' [paper](https://syssec.kaist.ac.kr/pub/2023/wisec2023_tuan.pdf)
 for more details.
 
------
+Ethical Consideration
+---------------------
+
+The main purpose of LTESniffer is to support security and analysis research on the
+cellular network. Due to the collection of uplink-downlink user data, any use of
+LTESniffer must follow the local regulations on sniffing the LTE traffic. We are
+not responsible for any illegal purposes such as intentionally collecting user
+privacy-related information.
+
+Please act responsibly.
 
 LTESniffer Docker
 -----------------
 
 This repository contains the dockerfile and submodules to build LTESniffer on docker. This repository was
-created through the guidance of the maintainer of the LTESniffer repository. It uses Ubuntu 18.04 as it's base
+created through the guidance of @hdtuanss the maintainer of the LTESniffer repository. It uses Ubuntu 18.04 as it's base
 image, and includes both the repository for [uhd](https://github.com/EttusResearch/uhd) and the repository for
 [LTESniffer](https://github.com/SysSec-KAIST/LTESniffer) as git submodules.
 
 Due to the required build dependencies of the LTESniffer, it is not advised to try to build LTESniffer on any
 release of Ubuntu other than 18.04 (bionic). This means that once support for the bionic release is dropped by
-Ubuntu, it will no longer be advisable to continue to use this repository to build LTESniffer.
+Ubuntu, a considerable effort will be needed to update the dependencies of the project, and this repository
+will cease to function in perpetuity.
 
 ### Building
 
@@ -47,7 +57,7 @@ steps.
 2. Next, you will want to build the docker image. So, change your current directory to the the path of this
    repository and perform the docker build command.
 ```bash
-cd ltesniffer-docker && docker build -t ltesniffer-ubuntu:18.04 .
+cd ltesniffer-docker && docker build -t ltesniffer:18.04 .
 ```
 3. Once this completes successfully, you will have a working instance of LTESniffer running on docker. At this
    point you may perform the happy dance.
@@ -66,7 +76,7 @@ Creating a shell alias to help you run the docker container is quite simple. Jus
 snippet in your `~/.bashrc` or `~/.zshrc` file.
 
 ```bash
-alias ltesniffer="docker run ltesniffer-ubuntu $@"
+alias ltesniffer="docker run ltesniffer $@"
 ```
 
 #### Shell script
@@ -86,8 +96,8 @@ your path, then `~/.local/bin` would probably be the best option.
 docker run ltesniffer-ubuntu "$@"
 ```
 
-3. And, that's it. Just run LTESniffer as you would normally from the command line. 
+3. And, that's it. Just run LTESniffer as you would normally from the command line.
 
 ## Acknowledgements
 
-The LTESniffer project.
+Special thanks goes to @hdtuanss of the LTESniffer project.
