@@ -1,6 +1,11 @@
 LTESniffer
 =================
 
+>[!WARNING]
+>This repository is currently unmaintained and should not be used in lieu of [the official LTESniffer Repository](https://github.com/SysSec-KAIST/LTESniffer). It uses a version of LTESniffer that has not been kept up to date with the main repo, and an old release of Ubuntu (18.04) whose use is unadvisable. You are advised to use the [official repository instead](https://github.com/SysSec-KAIST/LTESniffer).
+
+------
+
 *LTESniffer* is An Open-Source LTE Downlink/Uplink Eavesdropper
 
 It first decodes the Physical Downlink Control Channel (PDCCH) to obtain the
